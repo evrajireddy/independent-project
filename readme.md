@@ -30,6 +30,20 @@ That's how an array is reducing to a sum.
 
 Also, note the second argument of arr.reduce(summarize, 0) — the sum of array items is initialized with 0.
 
+The callback would be invoked five times, with the arguments and return values in each call being as follows
+
+
+
+| Call   |   accumulator   |   currentValue   |   index   |   Return value   |
+| -------- | ------- | -------- | ------- | ------- |
+| First call   | 0   |   15   |   0   |   25   |
+| Second call   | 25   |   16   |   1   |   41   |
+| Third call   | 41   |   17   |   2   |   58   |
+| Fourth call   | 58   |   18   |   3   |   76   |
+| Fifth call   | 76   |   19   |   4   |   96   |
+	
+
+
 
 2. ### Callback Omitting initial value argument
     You can also omit the second argument of the array.reduce(). In such a case the reduce method initializes the accumulator value with the first item of the array, and the iteration starts from the second item.
@@ -40,3 +54,13 @@ arr.reduce((sum, number)=>() {
 });
 ```
 
+The callback would be invoked four times, with the arguments and return values in each call being as follows:
+
+| Call   |   accumulator   |   currentValue   |   index   |   Return value   |
+| -------- | ------- | -------- | ------- | ------- |
+| First call   | 15   |   16   |   1   |   31   |
+| Second call   | 31   |   17   |   2   |   48   |
+| Third call   | 48   |   18   |   3   |   66   |
+| Fourth call   | 66   |   19   |   4   |   85   |
+
+The value returned by reduce() would be that of the last callback invocation (95).
