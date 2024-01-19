@@ -11,7 +11,7 @@ function sumReducer1(arr){
 }, 0);
 return total;
 }
-console.log(sumReducer1([[15, 16, 17, 18, 19]]));
+console.log(sumReducer1([15, 16, 17, 18, 19]));
 
 
 
