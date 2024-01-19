@@ -37,10 +37,10 @@ The callback would be invoked five times, with the arguments and return values i
 | Call   |   accumulator   |   currentValue   |   index   |   Return value   |
 | -------- | ------- | -------- | ------- | ------- |
 | First call   | 0   |   15   |   0   |   15   |
-| Second call   | 25   |   16   |   1   |   41   |
-| Third call   | 41   |   17   |   2   |   58   |
-| Fourth call   | 58   |   18   |   3   |   76   |
-| Fifth call   | 76   |   19   |   4   |   85   |
+| Second call   | 15   |   16   |   1   |   31   |
+| Third call   | 31   |   17   |   2   |   48   |
+| Fourth call   | 48   |   18   |   3   |   66   |
+| Fifth call   | 66   |   19   |   4   |   85   |
 	
 
 
