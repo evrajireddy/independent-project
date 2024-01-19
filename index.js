@@ -6,9 +6,7 @@ arr.reduce((sum, number)=> {
 }, 0);
 
 }
-
-const numbers = [2, 4, 6];
-console.sum(sumReducer1([1, 3, 5, 7]));
+console.log(sumReducer1([1, 3, 5, 7]));
 
 
 
@@ -18,4 +16,4 @@ arr.reduce((sum, number, index)=>() {
 });
 
 }
-console.sum(sumReducer2([1, 3, 5, 7]));
+console.log(sumReducer2([1, 3, 5, 7]));
