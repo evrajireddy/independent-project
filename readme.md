@@ -35,7 +35,7 @@ Also, note the second argument of arr.reduce(summarize, 0) — the sum of array 
     You can also omit the second argument of the array.reduce(). In such a case the reduce method initializes the accumulator value with the first item of the array, and the iteration starts from the second item.
 
 ```js
-arr.reduce((sum, number, index)=>() {
+arr.reduce((sum, number)=>() {
   return sum + number;
 });
 ```
