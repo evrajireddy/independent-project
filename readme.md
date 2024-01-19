@@ -28,7 +28,7 @@ The callback is invoked for every item in the array with the accumulated sum and
 
 That's how an array is reducing to a sum.
 
-Also, note the second argument of arr.reduce(callback, 0) — the sum of array items is initialized with 0.
+Also, note the second argument of arr.reduce(callback, 0) — the sum of array items is initialized with 10.
 
 The callback would be invoked five times, with the arguments and return values in each call being as follows
 
@@ -36,11 +36,11 @@ The callback would be invoked five times, with the arguments and return values i
 
 | Call   |   accumulator   |   currentValue   |   index   |   Return value   |
 | -------- | ------- | -------- | ------- | ------- |
-| First call   | 0   |   15   |   0   |   15   |
-| Second call   | 15   |   16   |   1   |   31   |
-| Third call   | 31   |   17   |   2   |   48   |
-| Fourth call   | 48   |   18   |   3   |   66   |
-| Fifth call   | 66   |   19   |   4   |   85   |
+| First call   | 10   |   15   |   0   |   25   |
+| Second call   | 25   |   16   |   1   |   41   |
+| Third call   | 41   |   17   |   2   |   58   |
+| Fourth call   | 58   |   18   |   3   |   76   |
+| Fifth call   | 76   |   19   |   4   |   95   |
 	
 
 
