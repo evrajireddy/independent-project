@@ -28,7 +28,7 @@ The callback is invoked for every item in the array with the accumulated sum and
 
 That's how an array is reducing to a sum.
 
-Also, note the second argument of arr.reduce(summarize, 0) — the sum of array items is initialized with 0.
+Also, note the second argument of arr.reduce(callback, 0) — the sum of array items is initialized with 0.
 
 The callback would be invoked five times, with the arguments and return values in each call being as follows
 
