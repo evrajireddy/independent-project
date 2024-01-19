@@ -36,11 +36,11 @@ The callback would be invoked five times, with the arguments and return values i
 
 | Call   |   accumulator   |   currentValue   |   index   |   Return value   |
 | -------- | ------- | -------- | ------- | ------- |
-| First call   | 10   |   15   |   0   |   25   |
-| Second call   | 25   |   16   |   1   |   41   |
-| Third call   | 41   |   17   |   2   |   58   |
-| Fourth call   | 58   |   18   |   3   |   76   |
-| Fifth call   | 76   |   19   |   4   |   95   |
+| First call   | 10   |   5   |   0   |   15   |
+| Second call   | 15   |   6   |   1   |   21   |
+| Third call   | 21   |   7   |   2   |   28   |
+| Fourth call   | 28   |   8   |   3   |   36   |
+| Fifth call   | 36   |   9   |   4   |   45   |
 	
 
 
@@ -58,9 +58,9 @@ The callback would be invoked four times, with the arguments and return values i
 
 | Call   |   accumulator   |   currentValue   |   index   |   Return value   |
 | -------- | ------- | -------- | ------- | ------- |
-| First call   | 15   |   16   |   1   |   31   |
-| Second call   | 31   |   17   |   2   |   48   |
-| Third call   | 48   |   18   |   3   |   66   |
-| Fourth call   | 66   |   19   |   4   |   85   |
+| First call   | 5   |   6   |   1   |   11   |
+| Second call   | 11   |   7   |   2   |   18   |
+| Third call   | 18   |   8   |   3   |   26   |
+| Fourth call   | 26   |   9   |   4   |   35   |
 
 The value returned by reduce() would be that of the last callback invocation (85).
