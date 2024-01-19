@@ -5,11 +5,11 @@ function sumReducer1(arr){
   //first parameter is the callback function that updates the accumulator value, 
   //second parameter is the initial value of the accumulator. 
   
-  arr.reduce((sum, number)=> {
+  let total = arr.reduce((sum, number)=> {
   const updatedSum = sum + number;
   return updatedSum;
 }, 0);
-
+return total;
 }
 console.log(sumReducer1([1, 3, 5, 7]));
 
@@ -19,9 +19,9 @@ function sumReducer2(arr){
   
   //second parameter omitted so that accumulator value is initialized with the first item of the array, and the iteration starts from the second item.
   
-arr.reduce((sum, number, index)=>() {
+let total = arr.reduce((sum, number)=> {
   return sum + number;
 });
-
+return total;
 }
 console.log(sumReducer2([1, 3, 5, 7]));
