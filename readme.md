@@ -40,7 +40,7 @@ The callback would be invoked five times, with the arguments and return values i
 | Second call   | 25   |   16   |   1   |   41   |
 | Third call   | 41   |   17   |   2   |   58   |
 | Fourth call   | 58   |   18   |   3   |   76   |
-| Fifth call   | 76   |   19   |   4   |   96   |
+| Fifth call   | 76   |   19   |   4   |   85   |
 	
 
 
@@ -61,6 +61,6 @@ The callback would be invoked four times, with the arguments and return values i
 | First call   | 15   |   16   |   1   |   31   |
 | Second call   | 31   |   17   |   2   |   48   |
 | Third call   | 48   |   18   |   3   |   66   |
-| Fourth call   | 66   |   19   |   4   |   96   |
+| Fourth call   | 66   |   19   |   4   |   85   |
 
-The value returned by reduce() would be that of the last callback invocation (96).
+The value returned by reduce() would be that of the last callback invocation (85).
