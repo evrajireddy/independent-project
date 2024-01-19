@@ -63,4 +63,4 @@ The callback would be invoked four times, with the arguments and return values i
 | Third call   | 18   |   8   |   3   |   26   |
 | Fourth call   | 26   |   9   |   4   |   35   |
 
-The value returned by reduce() would be that of the last callback invocation (85).
+The value returned by reduce() would be that of the last callback invocation (35).
