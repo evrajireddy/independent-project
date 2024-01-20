@@ -5,7 +5,7 @@
 The reduce() method of Array instances executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.
 The array.reduce() is a method on array that accepts 2 arguments:
 ```js
-const value = array.reduce(callback[, initialValue]);
+const value = array.reduce(callback, initialValue]);
 ```
 ## Algorithm Description
 
