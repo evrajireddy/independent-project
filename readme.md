@@ -32,6 +32,8 @@ Also, note the second argument of arr.reduce(callback, 0) — the sum of array i
 
 The callback would be invoked five times, with the arguments and return values in each call being as follows
 
+array = [5,6,7,8,9];
+
 
 
 | Call   |   accumulator   |   currentValue   |   index   |   Return value   |
@@ -53,6 +55,8 @@ arr.reduce((sum, number)=>() {
   return sum + number;
 });
 ```
+
+array = [5,6,7,8,9];
 
 The callback would be invoked four times, with the arguments and return values in each call being as follows:
 
