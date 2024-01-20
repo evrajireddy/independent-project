@@ -1,4 +1,4 @@
-
+//This is to demo Array.Reduce function with Callback and Initial Value 
 function sumReducer1(arr){
   
   //reduce function accepts 2 parameters, then invokes the callback for each item of the array, updating the accumulator at each step. 
@@ -14,7 +14,7 @@ return total;
 console.log(sumReducer1([5, 6, 7, 8, 9]));
 
 
-
+//This is to demo Array.Reduce function without Initial Value
 function sumReducer2(arr){
   
   //second parameter omitted so that accumulator value is initialized with the first item of the array, and the iteration starts from the second item.
@@ -27,7 +27,7 @@ return total;
 console.log(sumReducer2([5, 6, 7, 8, 9]));
 
 
-// Below is to calcuate Time Complexity for Reducer
+// This is to demo Array.reduce Time Complexity
 function timeComplexityReducer(){
   //Size of the object is 3
 const users = [
