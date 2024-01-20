@@ -94,22 +94,146 @@ Reduce method applies a callback against an accumulator and each element in the 
 
 ## Use Cases
 
-Because selection sort is not very efficient it's good for small data sizes, and as an intro for sorting algorithms for beginner coders
+### Sum all the values of an array
+In the below code, studentResult array has 5 numbers. Using the reduce() method array is reduced to a single value that the sum of all values of the studentResult array and the result is assigned to the total.
+
+```js
+const studentResult = [67, 90, 100, 37, 60];
+
+const total = studentResult.reduce((accumulator, currentValue) => accumulator +currentValue, 0);
+
+console.log(total);
+```
+Output:
+```js
+354
+```
+
+### Sum of values in an object array
+Generally, we are fetching data from the back-end as object arrays. Therefore, the reduce() method helps to manage our front-end logic. In the below code, studentResult object array has three subjects with their marks as objects. Here, currentValue.marks take the marks of each subject in the studentResult object array.
+
+```js
+const studentResult = [
+    { subject: 'Maths', marks: 78 },
+    { subject: 'Physics', marks: 80 },
+    { subject: 'Chemistry', marks: 93 }
+];
+
+const total = studentResult.reduce((accumulator, currentValue) => accumulator + currentValue.marks, 0);
+
+console.log(total);
+```
+Output:
+```js
+251
+```
+
+### Flatten an array of arrays
+“Flatten an array” means the transformation of the multi-dimensional array into one dimension. In the below code, twoDArr 2D array is transformed into oneDArr one dimensional array. Here, the first [1,2] array is assigned to the accumulator and then each rest of the elements of the twoDArr array is concatenated to the accumulator.
+
+```js
+const twoDArr = [ [1,2], [3,4], [5,6], [7,8] , [9,10] ];
+
+const oneDArr = twoDArr.reduce((accumulator, currentValue) => accumulator.concat(currentValue));
+
+console.log(oneDArr);
+```
+Output:
+```js
+[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+```
+
+### Grouping objects by a property
+Based on the properties of an object, we can group the object array into several groups using the reduce() method. You can understand the idea clearly with the below code fragment. Here, result object array has five objects that each object has subject and marks properties. The subject is passed if marks are greater than or equal to 50. Otherwise the subject fails. reduce() is used to group the result into the pass and fail. First initialValue is assigned to the accumulator, then push() method adds current object to the pass and the fail properties as object arrays after checking the condition.
+
+```js
+const result = [
+    {subject: 'Physics', marks: 41},
+    {subject: 'Chemistry', marks: 59},
+    {subject: 'Pure Maths', marks: 36},
+    {subject: 'Applied Maths', marks: 90},
+    {subject: 'English', marks: 64},
+];
+
+let initialValue = {
+    pass: [], 
+    fail: []
+}
+
+const groupedResult = result.reduce((accumulator, current) => {
+    (current.marks>=50) ? accumulator.pass.push(current) : accumulator.fail.push(current);
+    return accumulator;
+}, initialValue);
+
+console.log(groupedResult);
+```
+
+Output:
+```js
+{
+ pass: [
+  { subject: ‘Chemistry’, marks: 59 },
+  { subject: ‘Applied Maths’, marks: 90 },
+  { subject: ‘English’, marks: 64 }
+ ],
+ fail: [
+  { subject: ‘Physics’, marks: 41 },
+  { subject: ‘Pure Maths’, marks: 36 }
+ ]
+}
+```
+
+ ### Remove duplicates in an array
+In the below code fragment, duplicates in the duplicatedArr array are removed. First, an empty array is assigned to the accumulator as initial value. accumulator.includes() checks whether each element of the duplicatedArr array is already available in the accumulator. If the currentValue is not available in the accumulator, it is added using the push().
+```js
+const duplicatedsArr = [1, 5, 6, 5, 7, 1, 6, 8, 9, 7];
+
+const removeDuplicatedArr = duplicatedsArr.reduce((accumulator, currentValue) => {
+    if(!accumulator.includes(currentValue)){
+        accumulator.push(currentValue);
+    }
+    return accumulator;
+}, []);
+
+console.log(removeDuplicatedArr);
+```
+
+Output:
+```js
+[ 1, 5, 6, 7, 8, 9 ]
+```
 
 ## Edge Cases and Concerns
+If the array only has one element (regardless of position) and no initialValue is provided, or if initialValue is provided but the array is empty, the solo value will be returned without calling callbackFn.
 
-As mentioned above, the algorithm is not very efficient so the edge cases and concerns would be for large data inputs.
-Other sorting algorithms such as quick-sort and merge-sort have a time complexity of O(n\*log(n)) which are way more efficient.
+If initialValue is provided and the array is not empty, then the reduce method will always invoke the callback function starting at index 0.
+
+If initialValue is not provided then the reduce method will act differently for arrays with length larger than 1, equal to 1 and 0, as shown in the following example:
+```js
+const getMax = (a, b) => Math.max(a, b);
+
+// callback is invoked for each element in the array starting at index 0
+[1, 100].reduce(getMax, 50); // 100
+[50].reduce(getMax, 10); // 50
+
+// callback is invoked once for element at index 1
+[1, 100].reduce(getMax); // 100
+
+// callback is not invoked
+[50].reduce(getMax); // 50
+[].reduce(getMax, 1); // 1
+
+[].reduce(getMax); // TypeError
+```
+
 
 ## Citations
 
-[Wikipedia - Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)
+[Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 
 [How to Use Array Reduce Method in JavaScript](https://dmitripavlutin.com/javascript-array-reduce/)
 
-[The gif to illustrate selection sort](https://s-satsangi.medium.com/insertion-sort-selection-sort-and-bubble-sort-5eb16d55a4de)
-
-[ChatGPT Link to chat](https://chat.openai.com/share/078ea7b9-c88d-4abb-a8d9-8878aac4640c)
+[Use Cases for reduce() in JavaScript](https://javascript.plainenglish.io/5-use-cases-for-reduce-in-javascript-61ed243b8fef)
 
 [Time complexity Big 0 for Javascript Array methods and examples](https://dev.to/lukocastillo/time-complexity-big-0-for-javascript-array-methods-and-examples-mlg)
 
