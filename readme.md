@@ -64,3 +64,53 @@ The callback would be invoked four times, with the arguments and return values i
 | Fourth call   | 26   |   9   |   4   |   35   |
 
 The value returned by reduce() would be that of the last callback invocation (35).
+
+
+
+
+
+## Big O Evaluation
+
+### Time Complexity
+
+If the array/object's size is `n`, reducer will be called for each element. Hence the time complexity is O(n)
+
+```js
+const users = [
+  {name:'Luis', age:15},
+  {name:'Jose', age:18},
+  {name:'Aaron', age:40}
+];
+
+const reducer= (accumulator, item)=> accumulator + item.age;
+const totalAge =  users.reduce(reducer,0);
+const ageAverage = totalAge / users.length;
+console.log(`Total ${totalAge}, Average ${ageAverage}`); 
+```
+
+### Space Complexity
+
+Reduce method applies a callback against an accumulator and each element in the array to reduce it to a single value. space complexity - O(1) 
+
+## Use Cases
+
+Because selection sort is not very efficient it's good for small data sizes, and as an intro for sorting algorithms for beginner coders
+
+## Edge Cases and Concerns
+
+As mentioned above, the algorithm is not very efficient so the edge cases and concerns would be for large data inputs.
+Other sorting algorithms such as quick-sort and merge-sort have a time complexity of O(n\*log(n)) which are way more efficient.
+
+## Citations
+
+[Wikipedia - Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)
+
+[How to Use Array Reduce Method in JavaScript](https://dmitripavlutin.com/javascript-array-reduce/)
+
+[The gif to illustrate selection sort](https://s-satsangi.medium.com/insertion-sort-selection-sort-and-bubble-sort-5eb16d55a4de)
+
+[ChatGPT Link to chat](https://chat.openai.com/share/078ea7b9-c88d-4abb-a8d9-8878aac4640c)
+
+[Time complexity Big 0 for Javascript Array methods and examples](https://dev.to/lukocastillo/time-complexity-big-0-for-javascript-array-methods-and-examples-mlg)
+
+[Understanding Time and Space Complexity of Common JavaScript Built-in Methods](https://javascript.plainenglish.io/understanding-time-and-space-complexity-of-common-javascript-built-in-methods-39a3285a6409)
