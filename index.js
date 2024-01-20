@@ -8,14 +8,14 @@ function sumReducer1(arr){
   let total = arr.reduce((sum, number)=> {
   const updatedSum = sum + number;
   return updatedSum;
-}, 0);
+}, 10);
 return total;
 }
 console.log(sumReducer1([5, 6, 7, 8, 9]));
 
 
 
-function sumReducer2(arr){ 
+function sumReducer2(arr){
   
   //second parameter omitted so that accumulator value is initialized with the first item of the array, and the iteration starts from the second item.
   
@@ -25,3 +25,21 @@ let total = arr.reduce((sum, number)=> {
 return total;
 }
 console.log(sumReducer2([5, 6, 7, 8, 9]));
+
+
+// Below is to calcuate Time Complexity for Reducer
+function timeComplexityReducer(){
+  //Size of the object is 3
+const users = [
+  {name:'Luis', age:15},
+  {name:'Jose', age:18},
+  {name:'Aaron', age:40}
+];
+
+const reducer= (accumulator, item)=> accumulator + item.age;
+  //Below reducer will be called on each object of the array i.e., 3 times
+const totalAge =  users.reduce(reducer,0);
+const ageAverage = totalAge / users.length;
+console.log(`Total ${totalAge}, Average ${ageAverage}`); // Total 73, Average 24.333333333333332
+}
+timeComplexityReducer();
