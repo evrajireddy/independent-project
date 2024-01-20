@@ -22,13 +22,13 @@ function(accumulator, item, index, array) {
 }
 ```
 
-array.reduce(sum, 0) calculates the sum of all elements in the array.
+array.reduce(sum, 10) calculates the sum of all elements in the array.
 
 The callback is invoked for every item in the array with the accumulated sum and the iterated number. callback adds the iterated item to the already accumulated sum, and returns that updated sum.
 
 That's how an array is reducing to a sum.
 
-Also, note the second argument of arr.reduce(callback, 0) — the sum of array items is initialized with 10.
+Also, note the second argument of arr.reduce(callback, 10) — the sum of array items is initialized with 10.
 
 The callback would be invoked five times, with the arguments and return values in each call being as follows
 
